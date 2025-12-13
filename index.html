@@ -38,6 +38,7 @@
       color: var(--secondary);
       background: var(--light);
       overflow-x: hidden;
+      width: 100%;
     }
     
     /* Navigation & Logo */
@@ -103,6 +104,9 @@
       transition: var(--transition);
       padding: 8px 0;
       position: relative;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
     }
     
     .nav-links a::after {
@@ -140,6 +144,10 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
     
     /* Header */
@@ -150,7 +158,7 @@
       background-position: center;
       background-attachment: fixed;
       color: white;
-      padding: 180px 20px 100px;
+      padding: 150px 20px 80px;
       text-align: center;
       position: relative;
       overflow: hidden;
@@ -181,6 +189,7 @@
       margin-bottom: 20px;
       letter-spacing: -0.5px;
       text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+      line-height: 1.2;
     }
     
     .lead {
@@ -190,26 +199,15 @@
       opacity: 0.95;
       font-weight: 300;
       line-height: 1.8;
+      padding: 0 10px;
     }
     
-    .header-badges {
+    .header-buttons {
       display: flex;
       justify-content: center;
+      gap: 20px;
+      margin-top: 40px;
       flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 40px;
-    }
-    
-    .location-badge {
-      background: rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(10px);
-      padding: 10px 25px;
-      border-radius: 30px;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      gap: 8px;
     }
     
     .btn {
@@ -221,7 +219,6 @@
       text-decoration: none;
       font-weight: 600;
       box-shadow: var(--shadow);
-      margin: 10px;
       transition: var(--transition);
       border: none;
       cursor: pointer;
@@ -229,6 +226,10 @@
       overflow: hidden;
       z-index: 1;
       font-size: 1rem;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
     }
     
     .btn::before {
@@ -306,6 +307,7 @@
       font-weight: 700;
       color: var(--secondary);
       font-size: 1.1rem;
+      line-height: 1.3;
     }
     
     .badge-subtext {
@@ -434,6 +436,7 @@
       left: 0;
       color: var(--accent);
       font-weight: bold;
+      font-size: 1.1rem;
     }
     
     /* Benefits Section */
@@ -554,43 +557,6 @@
       max-height: 500px;
     }
     
-    /* Blog Section */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-    
-    .blog-card {
-      background: white;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      transition: var(--transition);
-    }
-    
-    .blog-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-hover);
-    }
-    
-    .blog-image {
-      height: 200px;
-      background-size: cover;
-      background-position: center;
-    }
-    
-    .blog-content {
-      padding: 25px;
-    }
-    
-    .blog-meta {
-      font-size: 0.9rem;
-      color: var(--gray);
-      margin-bottom: 10px;
-    }
-    
     /* About Section */
     .about-content {
       display: grid;
@@ -646,30 +612,6 @@
       margin-right: 15px;
     }
     
-    /* Industries */
-    .industries-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      margin-top: 30px;
-    }
-    
-    .industry-tag {
-      background: white;
-      padding: 10px 20px;
-      border-radius: 50px;
-      box-shadow: var(--shadow);
-      font-weight: 500;
-      transition: var(--transition);
-    }
-    
-    .industry-tag:hover {
-      background: var(--primary);
-      color: white;
-      transform: translateY(-3px);
-    }
-    
     /* WhatsApp Quick Contact */
     .whatsapp-float {
       position: fixed;
@@ -692,6 +634,7 @@
       transition: var(--transition);
       border: none;
       gap: 10px;
+      min-height: 44px;
     }
     
     .whatsapp-link:hover {
@@ -706,40 +649,6 @@
     
     .whatsapp-text {
       font-size: 0.95rem;
-    }
-    
-    /* Service Areas */
-    .areas-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 30px;
-    }
-    
-    .area-card {
-      background: white;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: var(--shadow);
-      text-align: center;
-      min-width: 200px;
-      transition: var(--transition);
-    }
-    
-    .area-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-hover);
-    }
-    
-    .area-card.primary {
-      background: var(--gradient-primary);
-      color: white;
-    }
-    
-    .area-card.accent {
-      background: var(--gradient-accent);
-      color: white;
     }
     
     /* Footer */
@@ -804,6 +713,301 @@
       font-size: 0.9rem;
     }
     
+    /* ====== MOBILE OPTIMIZATION ====== */
+    /* Main header mobile optimization */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.3;
+        padding: 0 15px;
+      }
+      
+      .lead {
+        font-size: 1.1rem !important;
+        padding: 0 15px;
+        margin-bottom: 30px;
+      }
+      
+      header {
+        padding: 120px 15px 60px !important;
+        background-attachment: scroll !important;
+        margin-top: 60px;
+      }
+      
+      .header-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0 15px;
+      }
+      
+      .btn {
+        width: 90%;
+        max-width: 300px;
+        margin: 0;
+        padding: 14px 20px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8rem !important;
+      }
+      
+      .lead {
+        font-size: 1rem !important;
+      }
+      
+      header {
+        padding: 100px 15px 50px !important;
+      }
+    }
+    
+    /* Container mobile optimization */
+    .container, .header-container, .nav-container, .benefits {
+      max-width: 100%;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    
+    @media (max-width: 768px) {
+      .container {
+        padding: 60px 15px;
+      }
+      
+      section {
+        margin-bottom: 60px !important;
+      }
+    }
+    
+    /* Service cards mobile optimization */
+    @media (max-width: 768px) {
+      .services {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+        padding: 0 10px;
+      }
+      
+      .card {
+        padding: 25px 20px !important;
+        margin: 0;
+      }
+      
+      .card h3 {
+        font-size: 1.3rem !important;
+      }
+      
+      .card p {
+        font-size: 0.95rem !important;
+      }
+      
+      .list li {
+        font-size: 0.95rem;
+        padding-left: 22px;
+      }
+      
+      .list li::before {
+        font-size: 1rem;
+      }
+    }
+    
+    /* Benefits section mobile optimization */
+    @media (max-width: 768px) {
+      .benefits {
+        padding: 40px 20px !important;
+        margin-top: 40px;
+        border-radius: 15px;
+      }
+      
+      .benefits-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+      }
+      
+      .benefit-item {
+        padding: 20px !important;
+        margin: 0;
+      }
+    }
+    
+    /* Included grid mobile optimization */
+    @media (max-width: 768px) {
+      .included-grid {
+        grid-template-columns: 1fr !important;
+        gap: 15px;
+        padding: 0 10px;
+      }
+      
+      .included-item {
+        padding: 18px 15px !important;
+      }
+    }
+    
+    /* FAQ section mobile optimization */
+    @media (max-width: 768px) {
+      .faq-container {
+        padding: 0 15px;
+      }
+      
+      .faq-question {
+        padding: 15px !important;
+        font-size: 0.95rem;
+      }
+      
+      .faq-answer.active {
+        padding: 15px !important;
+      }
+    }
+    
+    /* About section mobile optimization */
+    @media (max-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+      }
+      
+      .info-box {
+        padding: 25px 20px !important;
+        margin: 0;
+      }
+    }
+    
+    /* Trust badges mobile optimization */
+    @media (max-width: 768px) {
+      .trust-badges {
+        padding: 40px 15px;
+      }
+      
+      .trust-badges .container {
+        padding: 30px 15px;
+      }
+      
+      .badges-container {
+        gap: 25px;
+      }
+      
+      .badge {
+        max-width: 140px;
+      }
+      
+      .badge-icon {
+        font-size: 2rem;
+      }
+      
+      .badge-text {
+        font-size: 1rem;
+      }
+      
+      .badge-subtext {
+        font-size: 0.85rem;
+      }
+    }
+    
+    /* Section headings mobile optimization */
+    @media (max-width: 768px) {
+      h2 {
+        font-size: 1.8rem !important;
+        padding: 0;
+        margin-bottom: 15px;
+      }
+      
+      h2::after {
+        bottom: -8px;
+        width: 50px;
+        height: 3px;
+      }
+      
+      .section-subtitle {
+        padding: 0;
+        font-size: 1rem !important;
+        margin-bottom: 30px;
+      }
+    }
+    
+    /* Navigation mobile optimization */
+    @media (max-width: 768px) {
+      .nav-container {
+        padding: 0 15px;
+      }
+      
+      .logo-main {
+        font-size: 1.5rem;
+      }
+      
+      .logo-tagline {
+        font-size: 0.75rem;
+      }
+      
+      .phone-badge {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+      }
+      
+      .nav-links {
+        display: none;
+      }
+    }
+    
+    /* WhatsApp button mobile optimization */
+    @media (max-width: 768px) {
+      .whatsapp-float {
+        left: 20px;
+        bottom: 20px;
+      }
+      
+      .whatsapp-link {
+        width: 60px;
+        height: 60px;
+        padding: 0;
+        border-radius: 50%;
+      }
+      
+      .whatsapp-text {
+        display: none;
+      }
+    }
+    
+    /* Footer mobile optimization */
+    @media (max-width: 768px) {
+      footer {
+        padding: 40px 15px 25px;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        gap: 30px;
+      }
+      
+      .footer-links ul {
+        padding: 0;
+      }
+      
+      .footer-address {
+        text-align: center;
+      }
+      
+      .footer-links a:hover {
+        padding-left: 0;
+      }
+    }
+    
+    /* Prevent text overflow on very small screens */
+    @media (max-width: 360px) {
+      h1 {
+        font-size: 1.6rem !important;
+      }
+      
+      h2 {
+        font-size: 1.5rem !important;
+      }
+      
+      .btn {
+        font-size: 0.9rem;
+        padding: 12px 18px;
+      }
+    }
+    
     /* Responsive */
     @media (max-width: 992px) {
       .about-content {
@@ -817,25 +1021,9 @@
       .benefits {
         padding: 40px 30px;
       }
-      
-      .nav-links {
-        display: none;
-      }
     }
     
     @media (max-width: 768px) {
-      h1 {
-        font-size: 2.2rem;
-      }
-      
-      .lead {
-        font-size: 1.1rem;
-      }
-      
-      .container {
-        padding: 60px 20px;
-      }
-      
       .services, .blog-grid, .included-grid {
         grid-template-columns: 1fr;
       }
@@ -847,27 +1035,6 @@
       
       .benefits-grid {
         grid-template-columns: 1fr;
-      }
-      
-      .header-badges {
-        flex-direction: column;
-        align-items: center;
-      }
-      
-      .whatsapp-float {
-        bottom: 20px;
-        left: 20px;
-      }
-      
-      .whatsapp-text {
-        display: none;
-      }
-      
-      .whatsapp-link {
-        width: 60px;
-        height: 60px;
-        border-radius: 50%;
-        padding: 0;
       }
     }
   </style>
@@ -903,27 +1070,12 @@
 <!-- Header -->
 <header id="home">
   <div class="header-container">
-    <h1>Professional Managed IT Support Services</h1>
-    <p class="lead">Expert IT solutions, cloud services, cybersecurity, web development, and managed IT support for businesses looking to thrive with reliable technology.</p>
-    
-    <div class="header-badges">
-      <div class="location-badge">
-        <i class="fas fa-map-marker-alt"></i> Luton (LU4)
-      </div>
-      <div class="location-badge">
-        <i class="fas fa-map-marker-alt"></i> London
-      </div>
-      <div class="location-badge">
-        <i class="fas fa-map-marker-alt"></i> Cambridge
-      </div>
-      <div class="location-badge">
-        <i class="fas fa-map-marker-alt"></i> South East
-      </div>
-    </div>
+    <h1>Your Technology, Managed.<br>Your Business, Empowered.</h1>
+    <p class="lead">Go beyond basic IT support. We deliver integrated solutions in cybersecurity, cloud services, and web development, providing the reliable technology foundation your business needs to grow with confidence.</p>
     
     <div class="header-buttons">
       <a class="btn" href="#contact">Get Free Consultation</a>
-      <a class="btn btn-outline" href="#services">Our Services</a>
+      <a class="btn btn-outline" href="#services">Explore Our Services</a>
     </div>
   </div>
 </header>
@@ -945,10 +1097,10 @@
       
       <div class="badge">
         <div class="badge-icon">
-          <i class="fas fa-shield-alt"></i>
+          <i class="fas fa-user-tie"></i>
         </div>
-        <div class="badge-text">Microsoft Certified</div>
-        <div class="badge-subtext">Azure, 365 & Security</div>
+        <div class="badge-text">Expert IT Team</div>
+        <div class="badge-subtext">Certified Professionals</div>
       </div>
       
       <div class="badge">
@@ -987,7 +1139,8 @@
         <ul class="list">
           <li>24/7 monitoring & support</li>
           <li>Remote & on‑site assistance</li>
-          <li>System maintenance</li>
+          <li>System maintenance & updates</li>
+          <li>IT infrastructure management</li>
         </ul>
       </div>
 
@@ -1001,6 +1154,7 @@
           <li>Microsoft 365 migration</li>
           <li>Azure/Entra identity</li>
           <li>SharePoint & OneDrive</li>
+          <li>Cloud security & compliance</li>
         </ul>
       </div>
 
@@ -1028,6 +1182,7 @@
           <li>Endpoint protection</li>
           <li>Firewall security</li>
           <li>Backup & DR planning</li>
+          <li>Security audits & testing</li>
         </ul>
       </div>
 
@@ -1041,6 +1196,7 @@
           <li>Switches, routers & Wi‑Fi</li>
           <li>Server & storage setup</li>
           <li>Infrastructure optimisation</li>
+          <li>Network security</li>
         </ul>
       </div>
 
@@ -1054,6 +1210,7 @@
           <li>Cloud voice platforms</li>
           <li>Call routing & configuration</li>
           <li>Telephony migration</li>
+          <li>Unified communications</li>
         </ul>
       </div>
 
@@ -1067,6 +1224,7 @@
           <li>Rack & pod module builds</li>
           <li>Cooling & UPS solutions</li>
           <li>Enterprise cabling</li>
+          <li>Data centre security</li>
         </ul>
       </div>
 
@@ -1080,6 +1238,7 @@
           <li>Rapid installation</li>
           <li>Fully wired IT racks</li>
           <li>CCTV integration</li>
+          <li>Custom configurations</li>
         </ul>
       </div>
 
@@ -1093,39 +1252,8 @@
           <li>CCTV installation</li>
           <li>Access control systems</li>
           <li>Remote monitoring</li>
+          <li>Security integration</li>
         </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Service Areas -->
-  <section>
-    <h2>Areas We Serve</h2>
-    <p class="section-subtitle">Providing expert IT support and services across multiple regions with local expertise.</p>
-    
-    <div class="areas-container">
-      <div class="area-card primary">
-        <h3><i class="fas fa-map-marker-alt"></i> Luton</h3>
-        <p>LU4 and surrounding areas</p>
-        <p style="font-size: 0.9rem; margin-top: 10px;">Our headquarters and primary service area</p>
-      </div>
-      
-      <div class="area-card">
-        <h3><i class="fas fa-map-marker-alt"></i> London</h3>
-        <p>Greater London area</p>
-        <p style="font-size: 0.9rem; margin-top: 10px;">City-wide IT support services</p>
-      </div>
-      
-      <div class="area-card accent">
-        <h3><i class="fas fa-map-marker-alt"></i> Cambridge</h3>
-        <p>Cambridge & surrounding</p>
-        <p style="font-size: 0.9rem; margin-top: 10px;">Technology hub support</p>
-      </div>
-      
-      <div class="area-card">
-        <h3><i class="fas fa-map-marker-alt"></i> South East</h3>
-        <p>Regional coverage</p>
-        <p style="font-size: 0.9rem; margin-top: 10px;">Wide area IT services</p>
       </div>
     </div>
   </section>
@@ -1242,16 +1370,6 @@
     <div class="faq-container">
       <div class="faq-item">
         <div class="faq-question">
-          <span>What areas do you serve?</span>
-          <i class="fas fa-chevron-down"></i>
-        </div>
-        <div class="faq-answer">
-          <p>We provide IT services across Luton (including LU4), London, Cambridge, and throughout the South East region. Our team is mobile and can provide both remote and onsite support throughout these areas.</p>
-        </div>
-      </div>
-      
-      <div class="faq-item">
-        <div class="faq-question">
           <span>Do you offer emergency IT support?</span>
           <i class="fas fa-chevron-down"></i>
         </div>
@@ -1266,7 +1384,7 @@
           <i class="fas fa-chevron-down"></i>
         </div>
         <div class="faq-answer">
-          <p>For critical issues, we respond within 15 minutes. Standard requests are addressed within 1 hour. Our proximity to key areas allows for rapid onsite response when needed.</p>
+          <p>For critical issues, we respond within 15 minutes. Standard requests are addressed within 1 hour. Our team provides rapid remote and onsite response when needed.</p>
         </div>
       </div>
       
@@ -1289,6 +1407,16 @@
           <p>Yes! We provide custom web and mobile app development services. Our team can create everything from business websites to e-commerce platforms and mobile applications for iOS and Android.</p>
         </div>
       </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What areas do you serve?</span>
+          <i class="fas fa-chevron-down"></i>
+        </div>
+        <div class="faq-answer">
+          <p>We provide IT services across the UK with a strong presence in multiple regions. Our team is mobile and can provide both remote and onsite support throughout the country.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -1297,12 +1425,12 @@
     <div class="about-content">
       <div class="about-text">
         <h2>About NexBrit</h2>
-        <p>Founded in 2008, NexBrit has been providing expert IT solutions to businesses for over 15 years. We started as a local Luton IT service provider and have expanded to serve businesses throughout the region.</p>
+        <p>Founded in 2008, NexBrit has been providing expert IT solutions to businesses for over 15 years. We started as a dedicated IT service provider and have expanded to serve businesses throughout the UK.</p>
         <p>Our team of certified professionals brings together decades of experience in IT infrastructure, cybersecurity, cloud solutions, web development, and managed services. We understand the unique technology challenges faced by modern businesses.</p>
         
         <h3 style="margin-top: 30px;">Our Commitment</h3>
         <ul class="list">
-          <li>Local expertise with national standards</li>
+          <li>Expertise with proven standards</li>
           <li>Proactive IT management and monitoring</li>
           <li>Transparent pricing with no hidden costs</li>
           <li>Rapid response and resolution times</li>
@@ -1314,17 +1442,6 @@
       <div class="info-box" id="contact">
         <h3>Contact NexBrit Today</h3>
         <div class="contact-info">
-          <div class="contact-item">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div>
-              <strong>Headquarters:</strong><br>
-              LU4, Luton, United Kingdom<br>
-              <em>Serving businesses nationwide</em>
-            </div>
-          </div>
-          
           <div class="contact-item">
             <div class="contact-icon">
               <i class="fas fa-envelope"></i>
@@ -1342,6 +1459,16 @@
             <div>
               <strong>Phone:</strong><br>
               07308 162847
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <div class="contact-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div>
+              <strong>Service Area:</strong><br>
+              Serving businesses across the UK
             </div>
           </div>
           
@@ -1372,9 +1499,9 @@
       </div>
       <p>Professional IT solutions for businesses across the UK. Specializing in managed IT, cloud services, cybersecurity, web development, and infrastructure.</p>
       <div class="footer-address">
-        <p><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> LU4, Luton, United Kingdom</p>
         <p><i class="fas fa-phone" style="margin-right: 8px;"></i> 07308 162847</p>
         <p><i class="fas fa-envelope" style="margin-right: 8px;"></i> info@nexbrit.co.uk</p>
+        <p><i class="fas fa-globe" style="margin-right: 8px;"></i> Serving businesses across the UK</p>
       </div>
     </div>
     
@@ -1391,13 +1518,14 @@
     </div>
     
     <div class="footer-links">
-      <h4>Areas We Serve</h4>
+      <h4>Quick Links</h4>
       <ul>
-        <li><a href="#">IT Support Luton</a></li>
-        <li><a href="#">IT Support London</a></li>
-        <li><a href="#">IT Support Cambridge</a></li>
-        <li><a href="#">IT Support Hertfordshire</a></li>
-        <li><a href="#">IT Support South East</a></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#faq">FAQ</a></li>
       </ul>
     </div>
     
@@ -1413,7 +1541,7 @@
   </div>
   
   <div class="copyright">
-    © NexBrit IT Solutions <span id="year"></span> — LU4, Luton, United Kingdom | Professional IT Services
+    © NexBrit IT Solutions <span id="year"></span> — Professional IT Services | Serving businesses across the UK
   </div>
 </footer>
 
@@ -1482,19 +1610,11 @@
   }, observerOptions);
   
   // Apply animations
-  document.querySelectorAll('.card, .benefit-item, .blog-card, .area-card').forEach(element => {
+  document.querySelectorAll('.card, .benefit-item, .included-item, .faq-item').forEach(element => {
     element.style.opacity = '0';
     element.style.transform = 'translateY(20px)';
     element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
     observer.observe(element);
-  });
-  
-  // Mobile menu toggle (simplified for now)
-  window.addEventListener('resize', () => {
-    if(window.innerWidth > 992) {
-      // Ensure nav links are visible on larger screens
-      document.querySelector('.nav-links').style.display = 'flex';
-    }
   });
 </script>
 
